@@ -2,9 +2,9 @@
 # Website: www.williamlam.com
 
 # vCenter Server used to deploy vSphere & vSAN 8 Lab
-$VIServer = "vcsa1.lab.lan"
+$VIServer = "192.168.30.3"
 $VIUsername = "administrator@vsphere.local"
-$VIPassword = "AQ!sw2de3"
+$VIPassword = "VMware1!"
 
 # Full Path to the Nested ESXi 8.0 VA & Extracted VCSA 8.0 ISO
 $NestedESXiApplianceOVA = "D:\Lab\Vendors\VMware\vsphere_7\Nested_ESXi7.0u1d_Appliance_Template_v1.ova"
@@ -12,57 +12,54 @@ $VCSAInstallerPath = "D:\Lab\Vendors\VMware\vsphere_7\VMware-VCSA-all-7.0.1-1749
 
 # Nested ESXi VMs to deploy
 $NestedESXiHostnameToIPs = @{
-    "n2-esxi1" = "10.0.90.31"
-    "n2-esxi2" = "10.0.90.32"
-    "n2-esxi3" = "10.0.90.33"
-    "n2-esxi4" = "10.0.90.34"
-    "n2-esxi5" = "10.0.90.35"
-    "n2-esxi6" = "10.0.90.36"
+    "esxi-1" = "192.168.30.181"
+    "esxi-2" = "192.168.30.182"
+    "esxi-3" = "192.168.30.183"
 }
 
 # Nested ESXi VM Resources
 $NestedESXivCPU = "4"
-$NestedESXivMEM = "64" #GB
+$NestedESXivMEM = "10" #GB
 $NestedESXiCachingvDisk = "8" #GB
 $NestedESXiCapacityvDisk = "40" #GB
 
 # VCSA Deployment Configuration
 $VCSADeploymentSize = "tiny"
-$VCSADisplayName = "n2-vcsa1"
-$VCSAIPAddress = "10.0.90.31"
-$VCSAHostname = "n2-vcsa1.lab.lan" #Change to IP if you don't have valid DNS
+$VCSADisplayName = "vcsa-1"
+$VCSAIPAddress = "192.168.30.180"
+$VCSAHostname = "192.168.30.180" #Change to IP if you don't have valid DNS
 $VCSAPrefix = "24"
 $VCSASSODomainName = "vsphere.local"
-$VCSASSOPassword = "AQ!sw2de3fr4"
-$VCSARootPassword = "AQ!sw2de3fr4"
+$VCSASSOPassword = "VMware1!"
+$VCSARootPassword = "VMware1!"
 $VCSASSHEnable = "true"
 
 # General Deployment Configuration for Nested ESX & VCSA VM
-$VMDatacenter = "Datacenter"
-$VMCluster = "Cluster20"
-$VMNetwork = "vl90n-mgmt"
-$VMDatastore = "vsanDatastore20"
+$VMDatacenter = "Primp-Datacenter"
+$VMCluster = "Supermicro-Cluster"
+$VMNetwork = "VM Network"
+$VMDatastore = "sm-vsanDatastore"
 $VMNetmask = "255.255.255.0"
-$VMGateway = "10.0.90.1"
-$VMDNS = "10.0.10.100"
-$VMNTP = "0.pool.ntp.org"
-$VMPassword = "AQ!sw2de3"
-$VMDomain = "lab.lan"
-$VMSyslog = "172.17.31.112"
-$VMFolder = "n2-nested_lab"
+$VMGateway = "192.168.30.1"
+$VMDNS = "192.168.30.2"
+$VMNTP = "45.87.78.35"
+$VMPassword = "VMware1!"
+$VMDomain = "primp-industries.local"
+$VMSyslog = "172.17.33.3"
+$VMFolder = "Workloads"
 # Applicable to Nested ESXi only
 $VMSSH = "true"
 $VMVMFS = "false"
 
 # Name of new vSphere Datacenter/Cluster when VCSA is deployed
-$NewVCDatacenterName = "MHPC-LABG-01"
-$NewVCVSANClusterName = "labg-nsx-edge-cluster"
-$NewVCVDSName = "sgas-vds-prod"
-$NewVCMgmtPortgroupName = "sgas-infra-mgmt-vlan-90"
+$NewVCDatacenterName = "Datacenter"
+$NewVCVSANClusterName = "Cluster"
+$NewVCVDSName = "VDS"
+$NewVCMgmtPortgroupName = "DVPG-Management-Network"
 
 # Advanced Configurations
 # Set to 1 only if you have DNS (forward/reverse) for ESXi hostnames
-$addHostByDnsName = 1
+$addHostByDnsName = 0
 
 #### DO NOT EDIT BEYOND HERE ####
 
@@ -79,7 +76,7 @@ $addESXiHostsToVC = 1
 $configureVSANDiskGroup = 1
 $configureVDS = 1
 $clearVSANHealthCheckAlarm = 1
-$moveVMsIntovApp = 0
+$moveVMsIntovApp = 1
 
 $vcsaSize2MemoryStorageMap = @{
 "tiny"=@{"cpu"="2";"mem"="14";"disk"="415"};
