@@ -29,7 +29,7 @@ $NestedESXiCapacityvDisk = "40" #GB
 # VCSA Deployment Configuration
 $VCSADeploymentSize = "tiny"
 $VCSADisplayName = "n2-vcsa1"
-$VCSAIPAddress = "10.0.90.31"
+$VCSAIPAddress = "10.0.90.30"
 $VCSAHostname = "n2-vcsa1.lab.lan" #Change to IP if you don't have valid DNS
 $VCSAPrefix = "24"
 $VCSASSODomainName = "vsphere.local"
