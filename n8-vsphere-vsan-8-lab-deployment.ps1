@@ -12,12 +12,12 @@ $VCSAInstallerPath = "D:\Lab\Vendors\VMware\vsphere_7\VMware-VCSA-all-7.0.3-2235
 
 # Nested ESXi VMs to deploy
 $NestedESXiHostnameToIPs = @{
-    "n8-esxi1" = "10.0.90.181"
-    "n8-esxi2" = "10.0.90.182"
-    "n8-esxi3" = "10.0.90.183"
-    "n8-esxi4" = "10.0.90.184"
-    "n8-esxi5" = "10.0.90.185"
-    "n8-esxi6" = "10.0.90.186"    
+    # "n8-esxi1" = "10.0.90.181"
+    # "n8-esxi2" = "10.0.90.182"
+    # "n8-esxi3" = "10.0.90.183"
+    # "n8-esxi4" = "10.0.90.184"
+    # "n8-esxi5" = "10.0.90.185"
+    # "n8-esxi6" = "10.0.90.186"    
     "n8-esxi7" = "10.0.90.187"
     "n8-esxi8" = "10.0.90.188"
     "n8-esxi9" = "10.0.90.189"
@@ -42,7 +42,7 @@ $VCSASSHEnable = "true"
 
 # General Deployment Configuration for Nested ESX & VCSA VM
 $VMDatacenter = "Datacenter"
-$VMCluster = "Cluster20"
+$VMCluster = "Cluster-core"
 $VMNetwork = "vl90n-mgmt"
 $VMDatastore = "vsanDatastore20"
 $VMNetmask = "255.255.255.0"
@@ -75,12 +75,12 @@ $VAppName = "Nested-vSphere-vSAN-8-Lab-$random_string"
 
 $preCheck = 1
 $confirmDeployment = 1
-$deployNestedESXiVMs = 1
-$deployVCSA = 1
-$setupNewVC = 1
-$addESXiHostsToVC = 1
-$configureVSANDiskGroup = 0
-$configureVDS = 1
+$deployNestedESXiVMs = 0
+$deployVCSA = 0
+$setupNewVC = 0
+$addESXiHostsToVC = 0
+$configureVSANDiskGroup = 1
+$configureVDS = 0
 $clearVSANHealthCheckAlarm = 1
 $moveVMsIntovApp = 0
 
