@@ -1,0 +1,449 @@
+[12-22-2024_04:22:33] Connecting to Management vCenter Server vcsa1.lab.lan ...
+[12-22-2024_04:24:36] Creating VCSA JSON Configuration file for deployment ...
+[12-22-2024_04:24:36] Deploying the VCSA ...
+Run the installer with "-v" or "--verbose" to log detailed information
+Not executing pre-check-only.
+Updating log file location, copying 'C:\Users\JAMES~1.GOD\AppData\Local\Temp\2\vcsaCliInstaller-2024-12-22-21-27-quij2sy9\vcsa-cli-installer.log' to desired location as a backup: 'C:\Users\JAMES~1.GOD\AppData\Local\Temp\2\vcsaCliInstaller-2024-12-22-21-27-quij2sy9\workflow_1734902838862\vcsa-cli-installer.log.bak'
+Consuming the installer build:21057735
+Workflow log-dir
+C:\Users\JAMES~1.GOD\AppData\Local\Temp\2\vcsaCliInstaller-2024-12-22-21-27-quij2sy9\workflow_1734902838862
+precheck_rpm_path = None
+====== [START] Start executing Task: To validate CLI options at 21:27:19 ======
+parsing the deployment option: xlarge-xlstorage
+parsing the deployment option: medium-light
+skipping the option: medium-light
+parsing the deployment option: xlarge-lstorage
+parsing the deployment option: small
+parsing the deployment option: large-light
+skipping the option: large-light
+parsing the deployment option: xlarge
+parsing the deployment option: medium
+parsing the deployment option: tiny-xlstorage
+parsing the deployment option: large
+parsing the deployment option: small-lstorage
+parsing the deployment option: large-lstorage
+parsing the deployment option: small-xlstorage
+parsing the deployment option: large-xlstorage
+parsing the deployment option: tiny-lstorage
+parsing the deployment option: medium-lstorage
+parsing the deployment option: small-light
+skipping the option: small-light
+parsing the deployment option: medium-xlstorage
+parsing the deployment option: tiny
+Command line arguments verified.
+ [SUCCEEDED] Successfully executed Task 'CLIOptionsValidationTask: Executing CLI
+optionsValidation task' in TaskFlow 'template_validation' at 21:27:19
+ [START] Start executing Task: To validate the syntax of the template. at
+21:27:19
+Template syntax validation for template
+'C:\Users\JAMES~1.GOD\AppData\Local\Temp\2\jsontemplate.json' succeeded.
+Syntax validation for all templates succeeded.
+ [SUCCEEDED] Successfully executed Task 'SyntaxValidationTask: Executing
+Template Syntax Validation task' in TaskFlow 'template_validation' at 21:27:19
+ [START] Start executing Task: To check the version of each template, and for
+each older template that supports CEIP, convert it to the latest template
+format, and save it to the Template Blackboard at 21:27:19
+Template version processing for template
+'C:\Users\JAMES~1.GOD\AppData\Local\Temp\2\jsontemplate.json' succeeded.
+Version processing for all templates succeeded.
+ [SUCCEEDED] Successfully executed Task 'VersionProcessingTask: Executing
+Template Version Processing task' in TaskFlow 'template_validation' at 21:27:19
+ [START] Start executing Task: To validate the template structure against the
+rules specified by a corresponding template schema. at 21:27:19
+Template structure validation for template
+'C:\Users\JAMES~1.GOD\AppData\Local\Temp\2\jsontemplate.json' succeeded.
+Structure validation for all templates succeeded.
+ [SUCCEEDED] Successfully executed Task 'StructureValidationTask: Executing
+Template Structure Validation task' in TaskFlow 'template_validation' at
+21:27:20
+ [START] Start executing Task: To create a dependency graph for the provided
+templates, with an edge pairing two templates that are dependent on each other.
+Such graph relationships will affect whether certain templates can be deployed
+in parallel, or must be deployed sequentially. at 21:27:20
+Dependency processing for all templates succeeded.
+ [SUCCEEDED] Successfully executed Task 'DependencyProcessingTask: Executing
+Template Dependency Processing task' in TaskFlow 'template_validation' at
+21:27:20
+The certificate of server 'vcsa1.lab.lan' will not be verified because you have
+provided either the '--no-ssl-certificate-verification' or '--no-esx-ssl-verify'
+command parameter, which disables verification for all certificates. Remove this
+parameter from the command line if you want server certificates to be verified.
+ [START] Start executing Task: Validate that requirements are met in the source
+VCSA. at 21:27:32
+InstallRequirementCollector: Reached gathering requirement
+ [SUCCEEDED] Successfully executed Task 'SrcRequirementTask: Running
+SrcRequirementTask' in TaskFlow 'jsontemplate' at 21:27:32
+====== [START] Start executing Task: Perform precheck tasks. at 21:27:32 ======
+ [START] Start executing Task: Verify that the provided credentials for the
+target ESXi/VC are valid at 21:27:32
+ [SUCCEEDED] Successfully executed Task 'Running precheck: TargetCredentials' in
+TaskFlow 'install' at 21:27:32
+ [START] Start executing Task: Precheck CPU, memory and datastore size
+requirements for a host. at 21:27:33
+ [SUCCEEDED] Successfully executed Task 'Running precheck: HostConfigs' in
+TaskFlow 'install' at 21:27:35
+ [START] Start executing Task: Verify the target host type matches the one given
+in the template at 21:27:36
+ [SUCCEEDED] Successfully executed Task 'Running precheck: TargetHostType' in
+TaskFlow 'install' at 21:27:36
+ [START] Start executing Task: Verify that the target ESXi or VC version meets
+the minimum requirements at 21:27:36
+ [SUCCEEDED] Successfully executed Task 'Running precheck: TargetVersion' in
+TaskFlow 'install' at 21:27:36
+ [START] Start executing Task: Validate that the OVA image has the required OVA
+properties. at 21:27:36
+ [SUCCEEDED] Successfully executed Task 'Running precheck: OVAProperties.' in
+TaskFlow 'install' at 21:27:37
+ [START] Start executing Task: Validate the provided ip/fqdn is available to use
+at 21:27:37
+Pinging IPv4 address 10.0.90.10
+Time-out pinging 10.0.90.10.
+Pinging IPv4 address 10.0.90.10
+Time-out pinging 10.0.90.10.
+ [SUCCEEDED] Successfully executed Task 'Running precheck: IpFqdnInUse' in
+TaskFlow 'install' at 21:27:55
+ [SUCCEEDED] Successfully executed Task 'Running precheck:
+LinkingTargetHostnameValidation' in TaskFlow 'install' at 21:27:55
+ [START] Start executing Task: Validate the target ESXi management status at
+21:27:55
+ [SUCCEEDED] Successfully executed Task 'Running precheck: ESXManagementStatus'
+in TaskFlow 'install' at 21:27:55
+ [START] Start executing Task: Validate the provided target appliance name is
+available to use at 21:27:56
+ [SUCCEEDED] Successfully executed Task 'Running precheck: ApplianceName' in
+TaskFlow 'install' at 21:27:56
+================== [START] Start executing Task:  at 21:27:56 ==================
+= [SUCCEEDED] Successfully executed Task '' in TaskFlow 'install' at 21:27:56 =
+ [START] Start executing Task: Check whether the datastore's free space
+accommodate the VCSA's deployment option at 21:27:56
+ [SUCCEEDED] Successfully executed Task 'Running precheck: TargetDsFreespace' in
+TaskFlow 'install' at 21:27:56
+ [START] Start executing Task: Verify the provided SSO info is valid by
+connecting to the STS service. at 21:27:57
+ [SUCCEEDED] Successfully executed Task 'Running precheck: SSOCredentials' in
+TaskFlow 'install' at 21:27:57
+ [START] Start executing Task: Verify that the provided external SSO
+(PSC)/Embedded info is valid at 21:27:57
+ [SUCCEEDED] Successfully executed Task 'Running precheck: SSOExternal' in
+TaskFlow 'install' at 21:27:57
+ [START] Start executing Task: Running Pre-check for vSAN Bootstrap. at 21:27:57
+ [SUCCEEDED] Successfully executed Task 'Running Pre-check: vSAN Bootstrap.' in
+TaskFlow 'install' at 21:27:57
+ [START] Start executing Task: Running vSAN Cluster Health Checks. at 21:27:57
+VCSA cluster section is not available in the template. Skipping this task.
+ [SUCCEEDED] Successfully executed Task 'Running Pre-check: vSAN Cluster Health
+Checks.' in TaskFlow 'install' at 21:27:57
+ [START] Start executing Task: Running Pre-check for vSphere vLCM Cluster
+Enablement. at 21:27:58
+ [SUCCEEDED] Successfully executed Task 'Running Pre-check: vSphere vLCM Cluster
+Enablement.' in TaskFlow 'install' at 21:27:58
+ [SUCCEEDED] Successfully executed Task 'PrecheckTask: Running prechecks.' in
+TaskFlow 'jsontemplate' at 21:27:58
+ [START] Start executing Task: Invoke OVF Tool to deploy VCSA for installation,
+upgrade, and migration at 21:27:58
+Generated ovf tool command :
+D:\Lab\Vendors\VMware\vsphere_8\VMware-VCSA-all-8.0.0-21216066\vcsa-cli-installer\win32\..\..\vcsa\ovftool\win32\ovftool.exe
+--configFile=C:\Users\JAMES~1.GOD\AppData\Local\Temp\2\vcsaCliInstaller-2024-12-22-21-27-quij2sy9\workflow_1734902838862\jsontemplate\ovftool_config.cfg
+D:\Lab\Vendors\VMware\vsphere_8\VMware-VCSA-all-8.0.0-21216066\vcsa-cli-installer\win32\..\..\vcsa\VMware-vCenter-Server-Appliance-8.0.0.10200-21216066_OVF10.ova
+vi://vcsa1.lab.lan:443/Datacenter/host/Cluster
+OVF Tool: Opening OVA source:
+D:\Lab\Vendors\VMware\vsphere_8\VMware-VCSA-all-8.0.0-21216066\vcsa-cli-installer\win32\..\..\vcsa\VMware-vCenter-Server-Appliance-8.0.0.10200-21216066_OVF10.ova
+OVF Tool:  The manifest validates
+OVF Tool:  The provided certificate is in valid period
+OVF Tool: Source is signed but could not verify certificate (possibly
+self-signed)
+OVF Tool:  Certificate information:
+OVF Tool:    CertIssuer:/C=US/ST=California/L=Palo Alto/O=VMware, Inc.
+OVF Tool:    CertSubject:/C=US/ST=California/L=Palo Alto/O=VMware, Inc.
+OVF Tool:    -----BEGIN CERTIFICATE-----
+OVF Tool:    MIIDyzCCArOgAwIBAgIJAIR/y018RgMXMA0GCSqGSIb3DQEBCwUAME0xCzAJBgNV
+OVF Tool:    BAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMRIwEAYDVQQHDAlQYWxvIEFsdG8x
+OVF Tool:    FTATBgNVBAoMDFZNd2FyZSwgSW5jLjAeFw0xNjA5MDgwMTE3MjFaFw0yOTEyMzEw
+OVF Tool:    MTE3MjFaME0xCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMRIwEAYD
+OVF Tool:    VQQHDAlQYWxvIEFsdG8xFTATBgNVBAoMDFZNd2FyZSwgSW5jLjCCASAwDQYJKoZI
+OVF Tool:    hvcNAQEBBQADggENADCCAQgCggEBALU9NUtC39fqG7yo2XAswUmtli9uA+31uAMw
+OVF Tool:    9FFHAEv/it8pzBQZ/4r+2bN+GnXOWhuDd1K4ApKMRvoO4LwQfZxrkx4pXrsu0gdb
+OVF Tool:    4OunHw0D8MrdzSoob8Js/uq+IJ+8Bhsc6b7RzTUt9HeDWzHasAJVgMsjehGt23ay
+OVF Tool:    9FKOT6dVD6D/Xi3qJnB/4t/XNS6L63dC3ea4guzKDyLaXIP5bf/m56jvVImFjhhT
+OVF Tool:    W2ASbnEUlZIVrEuyVcdG7e3FvZufE553JmHL0YG/0m5bIHXKRzBRx0D3HHOAzOKw
+OVF Tool:    kkOnxJHSTN4Hz8hSYCWvzUAjSYL3Q8qiTd7GHJ2ynsRnu3KlzKUCAQOjga8wgaww
+OVF Tool:    HQYDVR0OBBYEFHg8KQJdm8NPQDmYP41uEgKG+VNwMH0GA1UdIwR2MHSAFHg8KQJd
+OVF Tool:    m8NPQDmYP41uEgKG+VNwoVGkTzBNMQswCQYDVQQGEwJVUzETMBEGA1UECAwKQ2Fs
+OVF Tool:    aWZvcm5pYTESMBAGA1UEBwwJUGFsbyBBbHRvMRUwEwYDVQQKDAxWTXdhcmUsIElu
+OVF Tool:    Yy6CCQCEf8tNfEYDFzAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBCwUAA4IBAQAD
+OVF Tool:    K9uUhsXzpuUcWJq83Vh2HHSxZ/DdR6h+FNYHfEX8h8DOIwhRHhIHoqXkwwnpbjip
+OVF Tool:    FBtSzNKzTmzMQBwB7GwzGSsBO2TU8alX2ssnDg2AqwgIeLzclfaQlYoid678Krew
+OVF Tool:    nFryr9PYMntr7uyU1duesmey12GS2z5UIhA4BaOnrPJcLCP22nXVlPEsa46ob7XH
+OVF Tool:    j4ngZ0ck/qE58Z90GaAuxaa2R3OlHQ+AhXc3q5IixqMDa0MLPd41Qv2kC5iZ+tCf
+OVF Tool:    XVdlf4/RqQBNHR8FFVxcjpaROId9Y9/yHdsMt55nN7pf7vRf5vSk1bHvLmlOYgiR
+OVF Tool:    tAj6rdPq0c+/C+fct1cM
+OVF Tool:    -----END CERTIFICATE-----
+OVF Tool:  Opening VI target: vi://vcsa1.lab.lan:443/Datacenter/host/Cluster
+OVF Tool:  Deploying to VI: vi://vcsa1.lab.lan:443/Datacenter/host/Cluster
+
+OVF Tool: Disk progress: 1%
+OVF Tool: Disk progress: 2%
+OVF Tool: Disk progress: 3%
+OVF Tool: Disk progress: 4%
+OVF Tool: Disk progress: 5%
+OVF Tool: Disk progress: 6%
+OVF Tool: Disk progress: 7%
+OVF Tool: Disk progress: 8%
+OVF Tool: Disk progress: 9%
+OVF Tool: Disk progress: 10%
+OVF Tool: Disk progress: 11%
+OVF Tool: Disk progress: 12%
+OVF Tool: Disk progress: 13%
+OVF Tool: Disk progress: 14%
+OVF Tool: Disk progress: 15%
+OVF Tool: Disk progress: 16%
+OVF Tool: Disk progress: 17%
+OVF Tool: Disk progress: 18%
+OVF Tool: Disk progress: 19%
+OVF Tool: Disk progress: 20%
+OVF Tool: Disk progress: 21%
+OVF Tool: Disk progress: 22%
+OVF Tool: Disk progress: 23%
+OVF Tool: Disk progress: 24%
+OVF Tool: Disk progress: 25%
+OVF Tool: Disk progress: 26%
+OVF Tool: Disk progress: 27%
+OVF Tool: Disk progress: 28%
+OVF Tool: Disk progress: 29%
+OVF Tool: Disk progress: 30%
+OVF Tool: Disk progress: 31%
+OVF Tool: Disk progress: 32%
+OVF Tool: Disk progress: 33%
+OVF Tool: Disk progress: 34%
+OVF Tool: Disk progress: 35%
+OVF Tool: Disk progress: 36%
+OVF Tool: Disk progress: 37%
+OVF Tool: Disk progress: 38%
+OVF Tool: Disk progress: 39%
+OVF Tool: Disk progress: 40%
+OVF Tool: Disk progress: 41%
+OVF Tool: Disk progress: 42%
+OVF Tool: Disk progress: 43%
+OVF Tool: Disk progress: 44%
+OVF Tool: Disk progress: 45%
+OVF Tool: Disk progress: 46%
+OVF Tool: Disk progress: 47%
+OVF Tool: Disk progress: 48%
+OVF Tool: Disk progress: 49%
+OVF Tool: Disk progress: 50%
+OVF Tool: Disk progress: 51%
+OVF Tool: Disk progress: 52%
+OVF Tool: Disk progress: 53%
+OVF Tool: Disk progress: 54%
+OVF Tool: Disk progress: 55%
+OVF Tool: Disk progress: 56%
+OVF Tool: Disk progress: 57%
+OVF Tool: Disk progress: 58%
+OVF Tool: Disk progress: 59%
+OVF Tool: Disk progress: 60%
+OVF Tool: Disk progress: 61%
+OVF Tool: Disk progress: 62%
+OVF Tool: Disk progress: 63%
+OVF Tool: Disk progress: 64%
+OVF Tool: Disk progress: 65%
+OVF Tool: Disk progress: 66%
+OVF Tool: Disk progress: 67%
+OVF Tool: Disk progress: 68%
+OVF Tool: Disk progress: 69%
+OVF Tool: Disk progress: 70%
+OVF Tool: Disk progress: 71%
+OVF Tool: Disk progress: 72%
+OVF Tool: Disk progress: 73%
+OVF Tool: Disk progress: 74%
+OVF Tool: Disk progress: 75%
+OVF Tool: Disk progress: 76%
+OVF Tool: Disk progress: 77%
+OVF Tool: Disk progress: 78%
+OVF Tool: Disk progress: 79%
+OVF Tool: Disk progress: 80%
+OVF Tool: Disk progress: 81%
+OVF Tool: Disk progress: 82%
+OVF Tool: Disk progress: 83%
+OVF Tool: Disk progress: 84%
+OVF Tool: Disk progress: 85%
+OVF Tool: Disk progress: 86%
+OVF Tool: Disk progress: 87%
+OVF Tool: Disk progress: 88%
+OVF Tool: Disk progress: 89%
+OVF Tool: Disk progress: 90%
+OVF Tool: Disk progress: 91%
+OVF Tool: Disk progress: 92%
+OVF Tool: Disk progress: 93%
+OVF Tool: Disk progress: 94%
+OVF Tool: Disk progress: 95%
+OVF Tool: Disk progress: 96%
+OVF Tool: Disk progress: 97%
+OVF Tool: Disk progress: 98%
+OVF Tool: Disk progress: 99%
+
+OVF Tool: Transfer Completed
+OVF Tool:  Powering on VM: n1-vcsa1
+
+OVF Tool: Task progress: 33%
+OVF Tool: Task progress: 66%
+OVF Tool: Task progress: 90%
+OVF Tool: Task progress: 100%
+
+OVF Tool: Task Completed
+OVF Tool:  Waiting for IP address...
+OVF Tool: Received IP address: fe80::250:56ff:fe8c:2430
+OVF Tool:  Completed successfully
+ [SUCCEEDED] Successfully executed Task 'Deploying vCenter Server Appliance' in
+TaskFlow 'jsontemplate' at 21:31:41
+ [START] Start executing Task: Monitor the entire VCSA deployment using
+appliance REST API at 21:31:41
+Checking if the target VCSA is powered on and ready for operations...
+Successfully verified that the target VCSA 'n1-vcsa1' has been powered on and is
+now ready for operations
+Checking if the target VCSA appliance API is available for query
+The certificate of server '[fe80::250:56ff:fe8c:2430]' will not be verified
+because you have provided either the '--no-ssl-certificate-verification' or
+'--no-esx-ssl-verify' command parameter, which disables verification for all
+certificates. Remove this parameter from the command line if you want server
+certificates to be verified.
+[12-22-2024_04:33:45] Connecting to Management vCenter Server vcsa1.lab.lan ...
+[12-22-2024_04:34:04] Creating VCSA JSON Configuration file for deployment ...
+[12-22-2024_04:34:04] Deploying the VCSA ...
+Run the installer with "-v" or "--verbose" to log detailed information
+Not executing pre-check-only.
+Updating log file location, copying 'C:\Users\JAMES~1.GOD\AppData\Local\Temp\2\vcsaCliInstaller-2024-12-22-21-34-h26qvgfm\vcsa-cli-installer.log' to desired location as a backup: 'C:\Users\JAMES~1.GOD\AppData\Local\Temp\2\vcsaCliInstaller-2024-12-22-21-34-h26qvgfm\workflow_1734903246293\vcsa-cli-installer.log.bak'
+Consuming the installer build:21057735
+Workflow log-dir
+C:\Users\JAMES~1.GOD\AppData\Local\Temp\2\vcsaCliInstaller-2024-12-22-21-34-h26qvgfm\workflow_1734903246293
+precheck_rpm_path = None
+====== [START] Start executing Task: To validate CLI options at 21:34:06 ======
+parsing the deployment option: small
+parsing the deployment option: large-lstorage
+parsing the deployment option: medium
+parsing the deployment option: large-light
+skipping the option: large-light
+parsing the deployment option: large-xlstorage
+parsing the deployment option: small-lstorage
+parsing the deployment option: xlarge-lstorage
+parsing the deployment option: xlarge-xlstorage
+parsing the deployment option: xlarge
+parsing the deployment option: large
+parsing the deployment option: small-xlstorage
+parsing the deployment option: tiny-xlstorage
+parsing the deployment option: tiny
+parsing the deployment option: medium-lstorage
+parsing the deployment option: small-light
+skipping the option: small-light
+parsing the deployment option: tiny-lstorage
+parsing the deployment option: medium-xlstorage
+parsing the deployment option: medium-light
+skipping the option: medium-light
+Command line arguments verified.
+ [SUCCEEDED] Successfully executed Task 'CLIOptionsValidationTask: Executing CLI
+optionsValidation task' in TaskFlow 'template_validation' at 21:34:06
+ [START] Start executing Task: To validate the syntax of the template. at
+21:34:06
+Template syntax validation for template
+'C:\Users\JAMES~1.GOD\AppData\Local\Temp\2\jsontemplate.json' succeeded.
+Syntax validation for all templates succeeded.
+ [SUCCEEDED] Successfully executed Task 'SyntaxValidationTask: Executing
+Template Syntax Validation task' in TaskFlow 'template_validation' at 21:34:06
+ [START] Start executing Task: To check the version of each template, and for
+each older template that supports CEIP, convert it to the latest template
+format, and save it to the Template Blackboard at 21:34:07
+Template version processing for template
+'C:\Users\JAMES~1.GOD\AppData\Local\Temp\2\jsontemplate.json' succeeded.
+Version processing for all templates succeeded.
+ [SUCCEEDED] Successfully executed Task 'VersionProcessingTask: Executing
+Template Version Processing task' in TaskFlow 'template_validation' at 21:34:07
+ [START] Start executing Task: To validate the template structure against the
+rules specified by a corresponding template schema. at 21:34:07
+Template structure validation for template
+'C:\Users\JAMES~1.GOD\AppData\Local\Temp\2\jsontemplate.json' succeeded.
+Structure validation for all templates succeeded.
+ [SUCCEEDED] Successfully executed Task 'StructureValidationTask: Executing
+Template Structure Validation task' in TaskFlow 'template_validation' at
+21:34:07
+ [START] Start executing Task: To create a dependency graph for the provided
+templates, with an edge pairing two templates that are dependent on each other.
+Such graph relationships will affect whether certain templates can be deployed
+in parallel, or must be deployed sequentially. at 21:34:07
+Dependency processing for all templates succeeded.
+ [SUCCEEDED] Successfully executed Task 'DependencyProcessingTask: Executing
+Template Dependency Processing task' in TaskFlow 'template_validation' at
+21:34:07
+The certificate of server 'vcsa1.lab.lan' will not be verified because you have
+provided either the '--no-ssl-certificate-verification' or '--no-esx-ssl-verify'
+command parameter, which disables verification for all certificates. Remove this
+parameter from the command line if you want server certificates to be verified.
+ [START] Start executing Task: Validate that requirements are met in the source
+VCSA. at 21:34:27
+InstallRequirementCollector: Reached gathering requirement
+ [SUCCEEDED] Successfully executed Task 'SrcRequirementTask: Running
+SrcRequirementTask' in TaskFlow 'jsontemplate' at 21:34:27
+====== [START] Start executing Task: Perform precheck tasks. at 21:34:46 ======
+ [START] Start executing Task: Verify that the provided credentials for the
+target ESXi/VC are valid at 21:35:14
+ [SUCCEEDED] Successfully executed Task 'Running precheck: TargetCredentials' in
+TaskFlow 'install' at 21:35:23
+ [START] Start executing Task: Verify the target host type matches the one given
+in the template at 21:35:24
+ [SUCCEEDED] Successfully executed Task 'Running precheck: TargetHostType' in
+TaskFlow 'install' at 21:35:33
+ [START] Start executing Task: Verify that the target ESXi or VC version meets
+the minimum requirements at 21:35:33
+ [SUCCEEDED] Successfully executed Task 'Running precheck: TargetVersion' in
+TaskFlow 'install' at 21:35:42
+ [START] Start executing Task: Validate that the OVA image has the required OVA
+properties. at 21:35:42
+ [SUCCEEDED] Successfully executed Task 'Running precheck: OVAProperties.' in
+TaskFlow 'install' at 21:35:42
+ [START] Start executing Task: Validate the provided ip/fqdn is available to use
+at 21:35:43
+Pinging IPv4 address 10.0.90.10
+10.0.90.10 is pingable.
+Pinging IPv4 address 10.0.90.10
+10.0.90.10 is pingable.
+================ [FAILED] Task: Running precheck: IpFqdnInUse execution failed
+at 21:35:45 ================
+================================================================================
+================ [FAILED] Task: PrecheckTask: Running prechecks. execution
+failed at 21:35:45 ================
+================================================================================
+=================================== 21:35:45 ===================================
+Result and Log File Information...
+WorkFlow log directory:
+C:\Users\JAMES~1.GOD\AppData\Local\Temp\2\vcsaCliInstaller-2024-12-22-21-34-h26qvgfm\workflow_1734903246293
+[12-22-2024_04:35:45] Disconnecting from vcsa1.lab.lan ...
+[12-22-2024_04:35:45] Connecting to the new VCSA ...
+[12-22-2024_04:36:07] Creating Datacenter nested-Datacenter ...
+
+Name
+----
+nested-Datacenter
+
+[12-22-2024_04:36:07] Creating VSAN Cluster nested-Cluster ...
+
+Name                           HAEnabled  HAFailover DrsEnabled DrsAutomationLevel
+                                          Level
+----                           ---------  ---------- ---------- ------------------
+nested-Cluster                 True       1          True       FullyAutomated
+
+
+Name                 Value                Type                 Description
+----                 -----                ----                 -----------
+das.ignoreRedundant… True                 ClusterHA            
+
+[12-22-2024_04:36:11] Creating VDS Management Network Portgroup
+
+Name                           NumPorts PortBinding
+----                           -------- -----------
+nested-DVPG-Management-Network 128      Static
+
+
+VDPortgroup          LoadBalancingPolicy  FailoverDetectionPolicy  NotifySwitches  EnableFailback ActiveUplinkPort
+-----------          -------------------  -----------------------  --------------  -------------- ----------------
+nested-DVPG-Managem… LoadBalanceSrcId     LinkStatus               True            True           {dvUplink1}
+
+[12-22-2024_04:36:12] Adding esxi21.lab.lan to nested-VDS
+[12-22-2024_04:36:13] Adding esxi22.lab.lan to nested-VDS
